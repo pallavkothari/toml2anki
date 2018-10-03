@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlin_version}")
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'idea'
+apply plugin: 'application'
+mainClassName = "com.pk.toml2anki.MainKt"
+
+group = 'com.pk'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation "org.slf4j:slf4j-api:1.8.0-beta2"
+    implementation "org.slf4j:slf4j-simple:1.8.0-beta2"
+    implementation "com.squareup.okhttp3:okhttp:3.11.0"
+    implementation "com.google.code.gson:gson:2.8.5"
+    implementation "com.google.guava:guava:26.0-jre"
+    testImplementation "io.kotlintest:kotlintest:2.0.7"
+    testImplementation "com.github.stefanbirkner:system-rules:1.18.0"
+    testImplementation "com.google.truth:truth:0.42"
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    compile("org.jetbrains.kotlin:kotlin-reflect")
+}
+
+test {
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
