@@ -22,11 +22,12 @@ fun main(args : Array<String>) = mainBody {
     ).parseInto(::MyArgs).run {
         Preconditions.checkArgument(source.extension == "toml", "please use a toml file as src")
         println("reading ${source.absolutePath}")
-        println("writing ${destination.absolutePath}")
+
         val toml = Files.asCharSource(source, Charsets.UTF_8).read()
         val toml2Anki = Toml2Anki(toml, destination)
         val anki = toml2Anki.parse()
         toml2Anki.writeFile(anki)
-        println("anki = \n${anki}")
+
+        println("wrote anki file to ${destination.absolutePath}")
     }
 }

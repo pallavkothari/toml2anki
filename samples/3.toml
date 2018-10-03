@@ -1,0 +1,6 @@
+[[card]]
+back = """
+this is a raw multiline string
+it may contain "quotes" or ;
+"""
+front = "test"
