@@ -23,6 +23,8 @@ repositories {
 }
 
 dependencies {
+    implementation "com.xenomachina:kotlin-argparser:2.0.7"
+    implementation "net.consensys.cava:cava-toml:0.3.1"
     implementation "org.slf4j:slf4j-api:1.8.0-beta2"
     implementation "org.slf4j:slf4j-simple:1.8.0-beta2"
     implementation "com.squareup.okhttp3:okhttp:3.11.0"

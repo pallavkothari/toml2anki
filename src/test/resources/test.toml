@@ -1,0 +1,15 @@
+
+"quoted key" = """
+with a multi
+line value"""
+
+dotted.key = """
+this is
+a multi line
+scalar"""
+
+
+multi.line.key = """
+this is
+a multi line
+scalar"""
